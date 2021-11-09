@@ -30,9 +30,6 @@ const tempo = setTimeout(() => {
 
 
 
-
-
-
 // FUNZIONI
 function numeriRandom(){
     // MI SONO CREATO IL CICLO PER GENERARE 5 NUMERI CASUALI E POI PUSHARLI NEL CONTENITORE
@@ -48,8 +45,11 @@ numbers.innerHTML += numbRandom;
 }
 
 function richiestaNumeri() {
+    let userNumber = "";
+    let contNumbers = [];
     for (let i = 0; i < 5; i++){
-        parseInt(prompt("inseriri i numeri che hai visto in precedenza"))
+        userNumber = parseInt(prompt("inseriri i numeri che hai visto in precedenza"))
+        contNumbers.push(userNumber);
     }
 }
 
