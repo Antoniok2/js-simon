@@ -6,6 +6,7 @@
 
 // VARIABILI
 let numbers = document.getElementById("numero");
+let numbersUserGuessed = document.getElementById("numeroUSER");
 let numbRandom = [];
 
 numeriRandom();
@@ -36,7 +37,7 @@ function richiestaNumeri() {
     let userNumber = "";
     let contNumbers = [];
     for (let i = 0; i < 5; i++){
-        userNumber = parseInt(prompt("inseriri i numeri che hai visto in precedenza"))
+        userNumber = parseInt(prompt("Benvenuto/a nel gioco, inseriri i numeri che hai visto in precedenza"))
         contNumbers.push(userNumber);
     }
     return contNumbers;
@@ -45,8 +46,9 @@ function richiestaNumeri() {
 function confrontoNumbers(nUser, nRandom) {
     for (let i = 0; i < nRandom.length; i++) {
         if (nRandom.includes(nUser[i])) {
-            console.log('numero indovinato ' + nUser[i]);
-        }
+            numbersUserGuessed.innerHTML += `Complimenti, hai beccato:
+             ${nUser[i]} `;
+        } 
     }
 }
 
