@@ -9,7 +9,33 @@
 let numbers = document.getElementById("numero");
 let numbRandom = [];
 
-// MI SONO CREATO IL CICLO PER GENERARE 5 NUMERI CASUALI E POI PUSHARLI NEL CONTENITORE
+numeriRandom();
+
+// ALLO SCADERE DEL TIMER ALL'UTENTE VERRà CHIESTO DI INSERIRE I 5 NUMERI CHE HA VISTO IN PAGINA
+const tempo = setTimeout(() => {
+    richiestaNumeri();
+}, 10000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNZIONI
+function numeriRandom(){
+    // MI SONO CREATO IL CICLO PER GENERARE 5 NUMERI CASUALI E POI PUSHARLI NEL CONTENITORE
 for (let i = 0; i < 5; i++){
     let numeri = 0;
     numeri = Math.floor(Math.random() * 100) + 1;
@@ -19,5 +45,12 @@ for (let i = 0; i < 5; i++){
 console.log(numbRandom);
 // HO INSERITO I NUMERI NELLA PAGINA HTML
 numbers.innerHTML += numbRandom;
+}
+
+function richiestaNumeri() {
+    for (let i = 0; i < 5; i++){
+        parseInt(prompt("inseriri i numeri che hai visto in precedenza"))
+    }
+}
 
 
