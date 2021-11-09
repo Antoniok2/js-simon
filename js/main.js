@@ -22,14 +22,23 @@ const tempo = setTimeout(() => {
 // FUNZIONI
 function numeriRandom(){
     // MI SONO CREATO IL CICLO PER GENERARE 5 NUMERI CASUALI E POI PUSHARLI NEL CONTENITORE
-for (let i = 0; i < 5; i++){
-    let numeri = 0;
-    numeri = Math.floor(Math.random() * 100) + 1;
-    numbRandom.push(numeri)
+while(numbRandom.length < 5) {
+    let numeroGenerato = Math.floor(Math.random() * 10) + 1;
+    let notDuplicated = true;
+
+    //CONTROLLO SE NON CI SONO DUPLICATI TRAMITE CONDIZIONE 
+    for (i = 0; i < numbRandom.length; i ++) {
+        if (numeroGenerato === numbRandom[i]) {
+            notDuplicated = false;
+        }
+    }
+
+    // SE NON CI SONO DUPLICATI LO AGGIUNGO ALL'ARRAY
+    if(notDuplicated){
+        numbRandom.push(numeroGenerato)
+    }
 }
-// HO FATTO UN LOG PER VEDERE SE TUTTO VA COME DOVREBBE
 console.log(numbRandom);
-// HO INSERITO I NUMERI NELLA PAGINA HTML
 numbers.innerHTML += numbRandom;
 }
 
