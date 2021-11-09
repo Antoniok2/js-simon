@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#contenitore {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: auto;
+    background-color: aqua;
+    border: 2px solid black;
+}
+
+#numeri {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 40px;
+}
