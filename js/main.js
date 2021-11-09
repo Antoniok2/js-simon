@@ -4,7 +4,6 @@
 // Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
-
 // VARIABILI
 let numbers = document.getElementById("numero");
 let numbRandom = [];
@@ -13,20 +12,9 @@ numeriRandom();
 
 // ALLO SCADERE DEL TIMER ALL'UTENTE VERRà CHIESTO DI INSERIRE I 5 NUMERI CHE HA VISTO IN PAGINA
 const tempo = setTimeout(() => {
-    richiestaNumeri();
-}, 10000);
-
-
-
-
-
-
-
-
-
-
-
-
+    let numbs = richiestaNumeri();
+    confrontoNumbers(numbs, numbRandom);
+}, 3000);
 
 
 
@@ -50,6 +38,15 @@ function richiestaNumeri() {
     for (let i = 0; i < 5; i++){
         userNumber = parseInt(prompt("inseriri i numeri che hai visto in precedenza"))
         contNumbers.push(userNumber);
+    }
+    return contNumbers;
+}
+
+function confrontoNumbers(nUser, nRandom) {
+    for (let i = 0; i < nRandom.length; i++) {
+        if (nRandom.includes(nUser[i])) {
+            console.log('numero indovinato ' + nUser[i]);
+        }
     }
 }
 
